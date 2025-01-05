@@ -23,23 +23,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-  data_deploy:
-    name: Deploy Package
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 9.0.x
-
-    - name: Restore dependencies
-      run: dotnet restore
-
-    - name: Build
-      run: dotnet build --no-restore -c Release
 
     - name: Get package version
       env:
@@ -55,5 +39,11 @@ jobs:
       env:
         PACKAGE_VERSION: ${{ env.PACKAGE_VERSION }}
       run: >
-        dotnet pack ./Digivance.Data/Digivance.Data.csproj -o ./bin/package -c Release -p:Version=$PACKAGE_VERSION &&
-        ls ./bin/package
+        dotnet pack ./Digivance.Data/Digivance.Data.csproj -o ./Digivance.Data/bin/Release/net9.0 -c Release -p:Version=$PACKAGE_VERSION &&
+        echo "PACKAGE_FILE=Digivance.Data.${PACKAGE_VERSION}.nupkg" >> $GITHUB_ENV
+
+    - name: Publish Nuget package
+      env: 
+        PACKAGE_FILE: ${{ env.PACKAGE_FILE }}
+      run: >
+        echo $PACKAGE_FILE
