@@ -30,10 +30,10 @@ jobs:
 
     - name: Get Digivance.Data version
       run: |
-        project_version="$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')" |
-        package_version="$($project_version)-pre.${{ github.run_number }}" |
-        echo "Project Version: $project_version" |
-        echo "Package Version: $package_version" |
+        project_version="$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')" \
+        package_version="$($project_version)-pre.${{ github.run_number }}" \
+        echo "Project Version: $project_version" \
+        echo "Package Version: $package_version" \
         echo "DATA_VERSION=$package_version" >> $GITHUB_ENV
     
     - name: Display package version
