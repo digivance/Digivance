@@ -34,7 +34,7 @@ jobs:
       run: >
         project_version=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/') &&
         package_version="${project_version}-pre.${RUN_NUMBER}" &&
-        echo ${package_version//\r}
+        echo ${package_version//\r//\n}
     
     - name: Display package version
       run: |
