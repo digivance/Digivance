@@ -29,9 +29,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Where am I
-      run: |
-        ls
+    - uses: actions/checkout@v4
 
     - name: Get Digivance.Data version
       id: digivance_data
