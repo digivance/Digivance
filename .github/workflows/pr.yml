@@ -29,9 +29,13 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Get Digivance.Data version
+      env:
+        RUN_NUMBER: ${{ github.run_number }}
       run: >
         project_version=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/') &&
-        echo $project_version
+        package_version=$(echo "$($project_version)-pre.$RUN_NUMBER") &&
+        echo $project_version &&
+        echo $package_version
     
     - name: Display package version
       run: |
