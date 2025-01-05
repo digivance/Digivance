@@ -46,4 +46,5 @@ jobs:
       env: 
         PACKAGE_FILE: ${{ env.PACKAGE_FILE }}
       run: >
-        echo $PACKAGE_FILE
+        echo $PACKAGE_FILE &&
+        ls ./Digivance.Data/bin/Release/net9.0
