@@ -31,7 +31,7 @@ jobs:
     - name: Get Digivance.Data version
       run: |
         version=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')
-        version=$($version)-pre
+        version=$(version)-pre
         echo $version
         echo "DATA_VERSION=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')" >> $GITHUB_ENV
     
