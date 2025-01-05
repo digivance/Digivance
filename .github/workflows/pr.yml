@@ -29,6 +29,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Where am I
+      run: |
+        echo ls
+
     - name: Get Digivance.Data version
       id: digivance_data
       uses: KageKirin/get-csproj-version@v1.0.0
