@@ -30,6 +30,6 @@ jobs:
     - name: Temp testing of things n stuff
       shell: bash
       env:
-        FAKE_SECRET: ${{ secrets.FAKE_SECRET }}
+        FAKE_SECRET: ${{ secrets.FALSE_SECRET }}
       run: |
         echo $FAKE_SECRET
