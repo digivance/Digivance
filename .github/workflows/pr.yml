@@ -31,7 +31,7 @@ jobs:
     steps:
     - name: Where am I
       run: |
-        echo ls
+        ls
 
     - name: Get Digivance.Data version
       id: digivance_data
