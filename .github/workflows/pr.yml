@@ -31,9 +31,10 @@ jobs:
     - name: Get Digivance.Data version
       run: |
         version=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')
-        version=$(version)-pre
-        echo $version
-        echo "DATA_VERSION=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')" >> $GITHUB_ENV
+        run_number=${{ github.run_number }}
+        package_version=$(echo "$version $run_number" | tr ' ' '-pre.')
+        echo $package_version
+        echo "DATA_VERSION=$package_version" >> $GITHUB_ENV
     
     - name: Set pre release version
       env:
