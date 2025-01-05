@@ -46,5 +46,4 @@ jobs:
       env: 
         PACKAGE_FILE: ${{ env.PACKAGE_FILE }}
       run: >
-        echo $PACKAGE_FILE &&
-        ls ./Digivance.Data/bin/Release/net9.0
+        dotnet nuget push $PACKAGE_FILE --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
