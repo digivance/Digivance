@@ -49,5 +49,5 @@ jobs:
       env:
         PACKAGE_VERSION: ${{ env.PACKAGE_VERSION }}
       run: >
-        dotnet pack ./Digivance.Data/Digivance.Data.csproj -o ./bin/package -c Release /p:Version=$PACKAGE_VERSION &&
+        dotnet pack ./Digivance.Data/Digivance.Data.csproj -o ./bin/package -c Release -p:Version=$PACKAGE_VERSION &&
         ls ./bin/package
