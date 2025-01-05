@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.1.0-pre.0</Version>
+    <Version>0.1.0</Version>
     <Authors>dmayor, digivance</Authors>
     <Company>Digivance Technologies</Company>
     <Product>Digivance Shared Data Layer</Product>

@@ -30,4 +30,8 @@ jobs:
 
     - name: Get Digivance.Data version
       run: |
-        grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/'
+        echo "DATA_VERSION=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')" >> $GITHUB_ENV
+
+    - name: Display version
+      run: |
+        echo ${{ env.DATA_VERSION }}
