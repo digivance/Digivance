@@ -28,12 +28,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Get version
-      id: package_version
-      uses: KageKirin/get-csproj-version@v0
-      with:
-        file: Digivance.Data/Digivance.Data.csproj
-
-    - name: Create tag
+    - name: Get Digivance.Data version
+      run: >
+        grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/'
+    
+    - name: Display package version
       run: |
-        echo "v${{ steps.test.package_version.version }}"
+        echo ${{ env.DATA_VERSION }}
