@@ -35,6 +35,12 @@ jobs:
       with:
         dotnet-version: 9.0.x
 
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore -c Release
+
     - name: Get package version
       env:
         RUN_NUMBER: ${{ github.run_number }}
