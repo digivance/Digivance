@@ -33,8 +33,11 @@ jobs:
         echo "DATA_VERSION=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')" >> $GITHUB_ENV
     
     - name: Set pre release version
+      env:
+        DATA_VERSION: ${{ env.DATA_VERSION }}
+        RUN_NUMBER: ${{ github.run_number }}
       run: |
-        echo "DATA_VERSION=$(${{ env.DATA_VERSION }}-pre.${{ github.run_number }})" >> $GITHUB_ENV
+        echo "DATA_VERSION=$($DATA_VERSION})-pre.$($RUN_NUMBER)" >> $GITHUB_ENV
 
     - name: Display package version
       run: |
