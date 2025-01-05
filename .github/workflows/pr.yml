@@ -34,7 +34,7 @@ jobs:
     
     - name: Set pre release version
       run: |
-        echo "DATA_VERSION=${{ env.DATA_VERSION }}-pre.${{ github.run_number }}"
+        echo "DATA_VERSION=${{ env.DATA_VERSION }}-pre.${{ github.run_number }}" >> $GITHUB_ENV
 
     - name: Display package version
       run: |
