@@ -28,14 +28,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Get Digivance.Data version
-      run: >
-        project_version="$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/')" &&
-        package_version="$($project_version)-pre.${{ github.run_number }}" &&
-        echo "Project Version: $project_version" &&
-        echo "Package Version: $package_version" &&
-        echo "DATA_VERSION=$package_version" >> $GITHUB_ENV
-    
-    - name: Display package version
+    - name: Get version
+      id: package_version
+      uses: KageKirin/get-csproj-version@v0
+      with:
+        file: Digivance.Data/Digivance.Data.csproj
+
+    - name: Create tag
       run: |
-        echo ${{ env.DATA_VERSION }}
+        git tag -m "CI: create new tag" v${{ steps.test.package_version.version }}
