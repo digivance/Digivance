@@ -33,7 +33,7 @@ jobs:
         RUN_NUMBER: ${{ github.run_number }}
       run: >
         project_version=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/') &&
-        package_version=$(echo "$($project_version)-pre.$RUN_NUMBER") &&
+        package_version=$(echo "$project_version-pre.$RUN_NUMBER") &&
         echo $project_version &&
         echo $package_version
     
