@@ -1,0 +1,11 @@
+name: Deploy Pipeline
+on:
+  check_suite:
+    types: [completed]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo Do deployment thingie here
