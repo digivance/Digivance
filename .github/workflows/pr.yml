@@ -26,3 +26,10 @@ jobs:
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    - name: Temp testing of things n stuff
+      shell: bash
+      env:
+        FAKE_SECRET: ${{ secrets.FAKE_SECRET }}
+      run: |
+        echo $FAKE_SECRET
