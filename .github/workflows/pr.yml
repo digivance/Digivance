@@ -22,29 +22,3 @@ jobs:
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
-
-
-
-    - name: Get package version
-      env:
-        RUN_NUMBER: ${{ github.run_number }}
-      run: >
-        project_version=$(grep '<Version>' < ./Digivance.Data/Digivance.Data.csproj | sed 's/.*<Version>\(.*\)<\/Version>/\1/') &&
-        echo "PROJECT_VERSION=${project_version//[$'\t\r\n']}" >> $GITHUB_ENV &&
-
-        package_version="${project_version}-pre.${RUN_NUMBER}" &&
-        echo "PACKAGE_VERSION=${package_version//[$'\t\r\n']}" >> $GITHUB_ENV
-    
-    - name: Create Nuget package
-      env:
-        PACKAGE_VERSION: ${{ env.PACKAGE_VERSION }}
-      run: >
-        dotnet pack ./Digivance.Data/Digivance.Data.csproj -o ./Digivance.Data/bin/Release/net9.0 -c Release -p:Version=$PACKAGE_VERSION &&
-        echo "PACKAGE_FILE=Digivance.Data.${PACKAGE_VERSION}.nupkg" >> $GITHUB_ENV
-
-    - name: Publish Nuget package
-      env: 
-        PACKAGE_FILE: ${{ env.PACKAGE_FILE }}
-      run: >
-        cd ./Digivance.Data/bin/Release/net9.0 &&
-        dotnet nuget push $PACKAGE_FILE --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
