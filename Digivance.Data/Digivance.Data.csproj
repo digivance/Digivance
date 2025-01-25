@@ -1,18 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Title>Digivance Platform - Shared Data Layer</Title>
     <Version>0.1.0</Version>
     <Authors>dmayor, digivance</Authors>
     <Company>Digivance Technologies</Company>
     <Product>Digivance Shared Data Layer</Product>
     <Description>This package provides the core level shared data functionality of the Digivance Platoform</Description>
     <PackageProjectUrl>https://digivance.com/platform/digivance.data</PackageProjectUrl>
+
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>Digivance Platform - Shared Data Layer</Title>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-
 </Project>

@@ -1,6 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Title>Digivance Platform - Entity Framework Helpers</Title>
+    <Version>0.1.0</Version>
+    <Authors>dmayor, digivance</Authors>
+    <Company>Digivance Technologies</Company>
+    <Product>Digivance Entity Framework Helpers</Product>
+    <Description>This package provides the core level entity framework integration of the Digivance Platoform</Description>
+    <PackageProjectUrl>https://digivance.com/platform/digivance.data.entityframework</PackageProjectUrl>
+
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -13,5 +21,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Digivance.Data\Digivance.Data.csproj" />
   </ItemGroup>
-
 </Project>
