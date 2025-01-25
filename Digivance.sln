@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digivance.Data", "Digivance.Data\Digivance.Data.csproj", "{AFDFD634-96A3-4C7B-9C3A-55A75EDBA1FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digivance.Data.EntityFramework", "Digivance.Data.EntityFramework\Digivance.Data.EntityFramework.csproj", "{5F212E3B-3634-4A82-80D6-E36E899BA468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digivance.Data.EntityFramework.Tests", "Digivance.Data.EntityFramework.Tests\Digivance.Data.EntityFramework.Tests.csproj", "{F94910CE-E186-487C-B0D1-7E2DF7C80B09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{AFDFD634-96A3-4C7B-9C3A-55A75EDBA1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFDFD634-96A3-4C7B-9C3A-55A75EDBA1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFDFD634-96A3-4C7B-9C3A-55A75EDBA1FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F212E3B-3634-4A82-80D6-E36E899BA468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F212E3B-3634-4A82-80D6-E36E899BA468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F212E3B-3634-4A82-80D6-E36E899BA468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F212E3B-3634-4A82-80D6-E36E899BA468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F94910CE-E186-487C-B0D1-7E2DF7C80B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F94910CE-E186-487C-B0D1-7E2DF7C80B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F94910CE-E186-487C-B0D1-7E2DF7C80B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F94910CE-E186-487C-B0D1-7E2DF7C80B09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
