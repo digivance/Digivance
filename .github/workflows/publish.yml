@@ -49,6 +49,7 @@ jobs:
     - name: Publish Nuget package
       env: 
         PACKAGE_FILE: ${{ env.PACKAGE_FILE }}
+        PROJECT_NAME: ${{ inputs.project_name }}
       run: >
-        cd ./Digivance.Data/bin/Release/net9.0 &&
+        cd ./${PROJECT_NAME}/bin/Release/net9.0 &&
         dotnet nuget push $PACKAGE_FILE --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
